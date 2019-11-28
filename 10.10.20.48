@@ -1,8 +1,8 @@
 Building configuration...
 
-Current configuration : 4206 bytes
+Current configuration : 4200 bytes
 !
-! Last configuration change at 22:37:20 UTC Wed Nov 27 2019 by cisco
+! Last configuration change at 00:11:47 UTC Thu Nov 28 2019 by developer
 !
 version 16.9
 service timestamps debug datetime msec
@@ -145,7 +145,6 @@ interface GigabitEthernet1
 interface GigabitEthernet2
  description Network Interface
  no ip address
- shutdown
  negotiation auto
  no mop enabled
  no mop sysid
