@@ -1,6 +1,6 @@
 Building configuration...
 
-Current configuration : 4200 bytes
+Current configuration : 4210 bytes
 !
 ! Last configuration change at 00:36:25 UTC Thu Nov 28 2019 by developer
 !
@@ -145,6 +145,7 @@ interface GigabitEthernet1
 interface GigabitEthernet2
  description Network Interface
  no ip address
+ shutdown
  negotiation auto
  no mop enabled
  no mop sysid
