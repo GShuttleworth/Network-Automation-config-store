@@ -1,0 +1,65 @@
+[
+    {
+        "datastore": "datastore-1081",
+        "name": "HA-Heartbeat",
+        "type": "NFS",
+        "free_space": 1073741824,
+        "capacity": 1073741824
+    },
+    {
+        "datastore": "datastore-2248",
+        "name": "M.2_BOOT",
+        "type": "VMFS",
+        "free_space": 224019873792,
+        "capacity": 231928233984
+    },
+    {
+        "datastore": "datastore-2249",
+        "name": "DataStore02",
+        "type": "VMFS",
+        "free_space": 743123714048,
+        "capacity": 999922073600
+    },
+    {
+        "datastore": "datastore-2300",
+        "name": "Enterprise-Networks",
+        "type": "NFS",
+        "free_space": 109951162777600,
+        "capacity": 109951162777600
+    },
+    {
+        "datastore": "datastore-30",
+        "name": "SpringpathDS-WZP22330FWQ",
+        "type": "VMFS",
+        "free_space": 220924477440,
+        "capacity": 231928233984
+    },
+    {
+        "datastore": "datastore-38",
+        "name": "SpringpathDS-WZP22330FWC",
+        "type": "VMFS",
+        "free_space": 221251633152,
+        "capacity": 231928233984
+    },
+    {
+        "datastore": "datastore-41",
+        "name": "SpringpathDS-WZP223315Y9",
+        "type": "VMFS",
+        "free_space": 221251633152,
+        "capacity": 231928233984
+    },
+    {
+        "datastore": "datastore-43",
+        "name": "DS-001",
+        "type": "NFS",
+        "free_space": 93056032034816,
+        "capacity": 109951162777600
+    },
+    {
+        "datastore": "datastore-65",
+        "name": "SpringpathDS-WZP22371CSZ",
+        "type": "VMFS",
+        "free_space": 221251633152,
+        "capacity": 231928233984
+    }
+]

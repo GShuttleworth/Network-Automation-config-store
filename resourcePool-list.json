@@ -1,0 +1,14 @@
+[
+    {
+        "resource_pool": "resgroup-2246",
+        "name": "Resources"
+    },
+    {
+        "resource_pool": "resgroup-2277",
+        "name": "Enterprise-Networks"
+    },
+    {
+        "resource_pool": "resgroup-27",
+        "name": "Resources"
+    }
+]
