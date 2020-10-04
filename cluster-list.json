@@ -1,8 +1,0 @@
-[
-    {
-        "cluster": "domain-c26",
-        "name": "MGMTCL001",
-        "ha_enabled": true,
-        "drs_enabled": true
-    }
-]
