@@ -1,9 +1,9 @@
 
 Building configuration...
 
-Current configuration : 16502 bytes
+Current configuration : 16519 bytes
 !
-! Last configuration change at 07:23:35 UTC Mon Aug 17 2020
+! Last configuration change at 19:23:40 UTC Mon Sep 28 2020 by admin
 !
 version 16.6
 no service pad
@@ -288,7 +288,7 @@ interface TenGigabitEthernet1/0/23
  device-tracking attach-policy IPDT_MAX_10
 !
 interface TenGigabitEthernet1/0/24
- description link to hostB
+ description changed by DNAC -nnow
  device-tracking attach-policy IPDT_MAX_10
 !
 interface GigabitEthernet1/1/1
