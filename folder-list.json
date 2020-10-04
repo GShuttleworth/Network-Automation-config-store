@@ -1,0 +1,227 @@
+[
+    {
+        "folder": "group-d1",
+        "name": "Datacenters",
+        "type": "DATACENTER"
+    },
+    {
+        "folder": "group-h23",
+        "name": "host",
+        "type": "HOST"
+    },
+    {
+        "folder": "group-n25",
+        "name": "network",
+        "type": "NETWORK"
+    },
+    {
+        "folder": "group-s24",
+        "name": "datastore",
+        "type": "DATASTORE"
+    },
+    {
+        "folder": "group-v1052",
+        "name": "B10-MGMT-W10",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v113",
+        "name": "Core",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1136",
+        "name": "CCS",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1139",
+        "name": "CCS",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1153",
+        "name": "fah",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1154",
+        "name": "k8s",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v116",
+        "name": "Jump Hosts",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1181",
+        "name": "CCP",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1182",
+        "name": "LON",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1183",
+        "name": "MAN",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1184",
+        "name": "UAT",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1185",
+        "name": "CCP",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1186",
+        "name": "LON",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1187",
+        "name": "MAN",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1188",
+        "name": "CCP",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1189",
+        "name": "LON",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1190",
+        "name": "MAN",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1191",
+        "name": "Control-Plane",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1192",
+        "name": "Tenant-Plane",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1193",
+        "name": "Installers",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v125",
+        "name": "User",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v126",
+        "name": "pwhitesi",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v127",
+        "name": "mattbrow",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v128",
+        "name": "HX",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v132",
+        "name": "ACI Label Test",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1561",
+        "name": "NAS",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v1840",
+        "name": "roporter",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v22",
+        "name": "vm",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v2241",
+        "name": "B10-GUEST-W10",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v2286",
+        "name": "Enterprise-Networks",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v2330",
+        "name": "dgeentil",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v28",
+        "name": "Hyperflex",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v320",
+        "name": "vdbench-pure",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v77",
+        "name": "ACI",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v78",
+        "name": "CliqrTemplates",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v801",
+        "name": "CCP",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v813",
+        "name": "Production",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v815",
+        "name": "Development",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v821",
+        "name": "matte",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v851",
+        "name": "VDI",
+        "type": "VIRTUAL_MACHINE"
+    },
+    {
+        "folder": "group-v977",
+        "name": "Firewall",
+        "type": "VIRTUAL_MACHINE"
+    }
+]

@@ -1,0 +1,940 @@
+[
+    {
+        "vm": "vm-1066",
+        "name": "DHCP-Server-v1253",
+        "power_state": "POWERED_ON",
+        "cpu_count": 1,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1075",
+        "name": "B10-MGMT-W10-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1076",
+        "name": "B10-MGMT-W10-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 32768
+    },
+    {
+        "vm": "vm-1077",
+        "name": "B10-MGMT-W10-03",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1078",
+        "name": "B10-MGMT-W10-04",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1094",
+        "name": "B10-MGMT-INT-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1106",
+        "name": "B10-DEV-SE-01",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 16,
+        "memory_size_MiB": 49172
+    },
+    {
+        "vm": "vm-1107",
+        "name": "B10-DEV-SE-02",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 16,
+        "memory_size_MiB": 49172
+    },
+    {
+        "vm": "vm-1108",
+        "name": "B10-DEV-SE-03",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 16,
+        "memory_size_MiB": 49172
+    },
+    {
+        "vm": "vm-1110",
+        "name": "B10-PROD-HX-WITS",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1111",
+        "name": "B10-MGMT-W10-05",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1115",
+        "name": "B10-MGMT-LOG-01",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1121",
+        "name": "B10-MGMT-NAS-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 32000
+    },
+    {
+        "vm": "vm-1122",
+        "name": "B10-MGMT-NAS-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 32000
+    },
+    {
+        "vm": "vm-1123",
+        "name": "B10-MGMT-NAS-03",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 32000
+    },
+    {
+        "vm": "vm-1125",
+        "name": "B10-DEV-VC-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 10240
+    },
+    {
+        "vm": "vm-1126",
+        "name": "B10-MGMT-W10-06",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1128",
+        "name": "Cisco-HX-Data-Platform-Installer-v4.0.2b-35410-esx",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 4,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1129",
+        "name": "B10-MGMT-W10-07",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1132",
+        "name": "B10-DEV-WIT-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1134",
+        "name": "B10-MGMT-TIM-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1135",
+        "name": "B10-MGMT-W10-08",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-114",
+        "name": "RDP-10-RECOVERY",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1147",
+        "name": "vmwfah01",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 16,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1150",
+        "name": "vmwfah02",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 16,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1152",
+        "name": "vmwfah03",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 16,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1171",
+        "name": "DHCP-Server-v1252",
+        "power_state": "POWERED_ON",
+        "cpu_count": 1,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1172",
+        "name": "B10-MGMT-W10-09",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1173",
+        "name": "CWOM",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-129",
+        "name": "CORE-HXBENCH-1.3.7",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 8,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-130",
+        "name": "CORE-HXProfiler-25",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1504",
+        "name": "ccp-tenant-image-1.16.3-ubuntu18-6.0.0",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 3,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1505",
+        "name": "ccp-installer-mgmt",
+        "power_state": "POWERED_ON",
+        "cpu_count": 3,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1506",
+        "name": "ccp-control-mgmt-masterb8100ae580",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1507",
+        "name": "ccp-control-mgmt-workera38753ce1e",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1508",
+        "name": "ccp-control-mgmt-workerb3f97f8691",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1509",
+        "name": "ccp-control-mgmt-worker3cfe017f99",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1586",
+        "name": "ccp-tenant-mgmt-master-gro-df4c82c5f7",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1587",
+        "name": "ccp-tenant-mgmt-master-gro-dd38ff2dad",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1588",
+        "name": "ccp-tenant-mgmt-master-gro-ae5ee09138",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1589",
+        "name": "ccp-tenant-mgmt-node-group-08f19539d1",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 32768
+    },
+    {
+        "vm": "vm-1590",
+        "name": "ccp-tenant-mgmt-node-group-000dfe4982",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 32768
+    },
+    {
+        "vm": "vm-1591",
+        "name": "ccp-tenant-mgmt-node-group-fc6c75dc3c",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 32768
+    },
+    {
+        "vm": "vm-1639",
+        "name": "Dev-ACI-Cloud-CSR",
+        "power_state": "POWERED_ON",
+        "cpu_count": 1,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1650",
+        "name": "B10-DEV-INT-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 32768
+    },
+    {
+        "vm": "vm-1657",
+        "name": "ccp-tenant-test-mgmt-master-gro-df161e5090",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1658",
+        "name": "ccp-tenant-test-mgmt-master-gro-883111e8a1",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1659",
+        "name": "ccp-tenant-test-mgmt-master-gro-acbfbc7556",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1660",
+        "name": "ccp-tenant-test-mgmt-node-group-c88b764234",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1661",
+        "name": "ccp-tenant-test-mgmt-node-group-97be63e972",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1662",
+        "name": "ccp-tenant-test-mgmt-node-group-1c26927b60",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1779",
+        "name": "B10-MGMT-W10-10",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1832",
+        "name": "k8s-template",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-1843",
+        "name": "B10-DEV-JENKINS-CEN7-NK",
+        "power_state": "POWERED_ON",
+        "cpu_count": 1,
+        "memory_size_MiB": 2048
+    },
+    {
+        "vm": "vm-1844",
+        "name": "B10-PROD-CCS-INSTALL-5-2",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1846",
+        "name": "CCS-5.2.0-Base-Image (75e3c38b895433374bfa5caefcb86dff)",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 3,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1849",
+        "name": "b10-prod-ccs-eb8575e6-33a1-4a7-mg-1-963f914a81",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1850",
+        "name": "b10-prod-ccs-eb8575e6-33a1-4a7-mg-1-76d5578421",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1851",
+        "name": "b10-prod-ccs-eb8575e6-33a1-4a7-mg-1-cf18bf19a5",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1852",
+        "name": "b10-prod-ccs-eb8575e6-33a1-4a7-ng-1-b804c3f241",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1853",
+        "name": "b10-prod-ccs-eb8575e6-33a1-4a7-ng-1-8d0418c613",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1854",
+        "name": "b10-prod-ccs-eb8575e6-33a1-4a7-ng-1-5769a504ea",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1871",
+        "name": "b10-prod-ccs-eb8575e6-33a1-4a7-ng-1-774a6632f2",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1873",
+        "name": "b10-prod-ccs-eb8575e6-33a1-4a7-ng-1-c1490391a2",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1890",
+        "name": "B10-PROD-CCS-REPO-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-1891",
+        "name": "B10-MGMT-CWOM-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-1965",
+        "name": "B10-PROD-REPO-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-2095",
+        "name": "Cisco-HXWorkload-Profiler-3.1.12-vCenter",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-2251",
+        "name": "SPINE201",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-2252",
+        "name": "SPINE202",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-2253",
+        "name": "Leaf101",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-2254",
+        "name": "Leaf102",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-2255",
+        "name": "Leaf103",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-2256",
+        "name": "Leaf104",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-2276",
+        "name": "CSR1000v",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2292",
+        "name": "Ubuntu-SRV-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2297",
+        "name": "W2K-SRV-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2299",
+        "name": "W2K-SRV-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2302",
+        "name": "B10-MGMT-ALB-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2307",
+        "name": "B10-MGMT-IPAM-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-2312",
+        "name": "B10-MGMT-W10-11",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2326",
+        "name": "B10-MGMT-W10-12",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2332",
+        "name": "my_server",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2335",
+        "name": "target1",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2372",
+        "name": "apic-dev-nir-se-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 65536
+    },
+    {
+        "vm": "vm-2374",
+        "name": "apic-dev-nir-se-03",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 65536
+    },
+    {
+        "vm": "vm-2375",
+        "name": "apic-dev-nir-se-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 65536
+    },
+    {
+        "vm": "vm-2379",
+        "name": "B10-MGMT-NAE-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 40960
+    },
+    {
+        "vm": "vm-2380",
+        "name": "B10-MGMT-NAE-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 40960
+    },
+    {
+        "vm": "vm-2381",
+        "name": "B10-MGMT-NAE-03",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 40960
+    },
+    {
+        "vm": "vm-2382",
+        "name": "b10-prod-mso-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-2383",
+        "name": "b10-prod-mso-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-2384",
+        "name": "b10-prod-mso-03",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-2386",
+        "name": "DHCP-Server-v265",
+        "power_state": "POWERED_ON",
+        "cpu_count": 1,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2387",
+        "name": "b10-dev-mso-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-2388",
+        "name": "b10-dev-mso-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-2389",
+        "name": "b10-dev-mso-03",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-2391",
+        "name": "B10-GUESTW10-07",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-2392",
+        "name": "b10-prod-ccs-eb8575e6-33a1-4a7-ng-1-e1c248dd0e",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-2393",
+        "name": "apic-prod-nir-se-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-2394",
+        "name": "apic-prod-nir-se-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-2395",
+        "name": "apic-prod-nir-se-03",
+        "power_state": "POWERED_ON",
+        "cpu_count": 16,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-2401",
+        "name": "B10-GUESTW10-13",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-319",
+        "name": "vdbench",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-35",
+        "name": "B10-MGMT-VC-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-36",
+        "name": "stCtlVM-WZP22330FWQ",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-39",
+        "name": "stCtlVM-WZP22330FWC",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-400",
+        "name": "centos7-t",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-401",
+        "name": "centos6-t",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-42",
+        "name": "stCtlVM-WZP223315Y9",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-589",
+        "name": "dcnm",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 24576
+    },
+    {
+        "vm": "vm-685",
+        "name": "B10-PROD-SE-01",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 16,
+        "memory_size_MiB": 49172
+    },
+    {
+        "vm": "vm-686",
+        "name": "B10-PROD-SE-02",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 16,
+        "memory_size_MiB": 49172
+    },
+    {
+        "vm": "vm-687",
+        "name": "B10-PROD-SE-03",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 16,
+        "memory_size_MiB": 49172
+    },
+    {
+        "vm": "vm-689",
+        "name": "B10-MGMT-FW-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-691",
+        "name": "B10-MGMT-FW-01",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-71",
+        "name": "stCtlVM-WZP22371CSZ",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 49152
+    },
+    {
+        "vm": "vm-760",
+        "name": "B10-MGMT-DC-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-772",
+        "name": "B10-MGMT-UAG-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-774",
+        "name": "B10-MGMT-WKS-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-802",
+        "name": "B10-MGMT-VDI-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-804",
+        "name": "B10-MGMT-WKS-02",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 32768
+    },
+    {
+        "vm": "vm-809",
+        "name": "Cisco-HX-Data-Platform-Installer-v3.5.2h-32139-esx",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-823",
+        "name": "B10-PROD-VC-01",
+        "power_state": "POWERED_ON",
+        "cpu_count": 4,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-835",
+        "name": "DHCP-server-v1010",
+        "power_state": "POWERED_ON",
+        "cpu_count": 1,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-891",
+        "name": "VDI-Template-01",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-898",
+        "name": "Fedora-Server",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-96",
+        "name": "hxrep001",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-97",
+        "name": "centos6",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-976",
+        "name": "RDP-UBU-ROPORTER",
+        "power_state": "POWERED_ON",
+        "cpu_count": 8,
+        "memory_size_MiB": 16384
+    },
+    {
+        "vm": "vm-978",
+        "name": "B10-PROD-FW-01",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-979",
+        "name": "B10-PROD-FW-02",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 4,
+        "memory_size_MiB": 8192
+    },
+    {
+        "vm": "vm-98",
+        "name": "centos7",
+        "power_state": "POWERED_OFF",
+        "cpu_count": 2,
+        "memory_size_MiB": 4096
+    },
+    {
+        "vm": "vm-999",
+        "name": "Win10-VDI-Master",
+        "power_state": "POWERED_ON",
+        "cpu_count": 2,
+        "memory_size_MiB": 8192
+    }
+]
