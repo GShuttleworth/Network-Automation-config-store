@@ -1,0 +1,1584 @@
+
+Building configuration...
+
+Current configuration : 50785 bytes
+!
+! Last configuration change at 21:43:36 UTC Tue Feb 16 2021 by admin
+!
+version 17.3
+service timestamps debug datetime msec
+service timestamps log datetime msec show-timezone year
+service password-encryption
+! Call-home is enabled by Smart-Licensing.
+service call-home
+no platform punt-keepalive disable-kernel-core
+!
+hostname cat_9k_1
+!
+!
+vrf definition Mgmt-vrf
+ !
+ address-family ipv4
+ exit-address-family
+ !
+ address-family ipv6
+ exit-address-family
+!
+enable secret 9 xxxxxxxx
+!
+aaa new-model
+!
+!
+aaa authentication login default local
+!
+!
+!
+!
+!
+!
+aaa session-id common
+boot system switch all flash:packages.conf
+switch 1 provision c9300-24ux
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+!
+ip name-server 4.4.4.4
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+vtp domain VTP-DISABLED
+vtp mode transparent
+mpls label mode all-vrfs protocol all-afs per-vrf
+no device-tracking logging theft
+device-tracking tracking
+!
+device-tracking policy IPDT_MAX_10
+ limit address-count 10
+ no protocol udp
+ tracking enable
+!
+!
+flow exporter 10.10.20.101
+ destination 10.10.20.101
+!
+!
+crytpo pki xxxxxxx
+ enrollment selfsigned
+ subject-name xxxxxxxx
+ revocation-check none
+ rsakeypair TP-self-signed- xxxxxxxx
+!
+crytpo pki xxxxxxx
+ enrollment mode ra
+ enrollment terminal
+ usage ssl-client
+ revocation-check crl
+!
+crytpo pki xxxxxxx
+ enrollment mode ra
+ enrollment terminal
+ usage ssl-client
+ revocation-check crl none
+ source interface TenGigabitEthernet1/1/1
+!
+crytpo pki xxxxxxx
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain xxxxxxx
+ certificate self-signed xxxxxxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+quit
+crypto pki certificate chain xxxxxxx
+ certificate ca xxxxxxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+quit
+crypto pki certificate chain xxxxxxx
+ certificate ca xxxxxxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+quit
+crypto pki certificate chain xxxxxxx
+ certificate ca xxxxxxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+quit
+!
+!
+dot1x system-auth-control
+license boot level network-advantage addon dna-advantage
+!
+!
+diagnostic bootup level minimal
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+memory free low-watermark processor 133201
+!
+username xxxxxxxx 
+username xxxxxxxx privilege 15 password 7 xxxxxxxx
+!
+redundancy
+ mode sso
+!
+!
+!
+!
+!
+!
+transceiver type all
+ monitoring
+!
+vlan 100 
+!
+vlan 101
+ name Adam_TEST
+!
+vlan 200,300 
+!
+!
+class-map match-any system-cpp-police-ewlc-control
+  description EWLC Control 
+class-map match-any DNA-APIC_QOS_IN#TRANS_DATA
+ match access-group name DNA-APIC_QOS_IN#TRANS_DATA__acl
+class-map match-any system-cpp-police-topology-control
+  description Topology control
+class-map match-any system-cpp-police-sw-forward
+  description Sw forwarding, L2 LVX data packets, LOGGING, Transit Traffic
+class-map match-any system-cpp-default
+  description EWLC Data, Inter FED Traffic 
+class-map match-any system-cpp-police-sys-data
+  description Openflow, Exception, EGR Exception, NFL Sampled Data, RPF Failed
+class-map match-any DNA-APIC_QOS_IN#REALTIME
+class-map match-any system-cpp-police-punt-webauth
+  description Punt Webauth
+class-map match-any DNA-APIC_QOS_IN#TUNNELED
+ match access-group name DNA-APIC_QOS_IN#TUNNELED__acl
+class-map match-any system-cpp-police-l2lvx-control
+  description L2 LVX control packets
+class-map match-any system-cpp-police-forus
+  description Forus Address resolution and Forus traffic
+class-map match-any DNA-EZQOS_2P6Q3T_9K#BULK-DATA
+ match dscp cs1 
+ match dscp af12 
+ match dscp af13 
+ match dscp af11 
+class-map match-any system-cpp-police-multicast-end-station
+  description MCAST END STATION
+class-map match-any system-cpp-police-high-rate-app
+  description High Rate Applications 
+class-map match-any system-cpp-police-multicast
+  description MCAST Data
+class-map match-any DNA-EZQOS_2P6Q3T_9K#CONTROL-PLANE
+ match dscp cs3 
+ match dscp cs2 
+ match dscp cs7 
+ match dscp cs6 
+class-map match-any DNA-EZQOS_2P6Q3T_9K#MULTIMEDIA-CONFERENCING
+ match dscp af43 
+ match dscp af41 
+ match dscp af42 
+class-map match-any DNA-APIC_QOS_IN#VOICE
+class-map match-any system-cpp-police-l2-control
+  description L2 control
+class-map match-any system-cpp-police-dot1x-auth
+  description DOT1X Auth
+class-map match-any system-cpp-police-data
+  description ICMP redirect, ICMP_GEN and BROADCAST
+class-map match-any DNA-APIC_QOS_IN#SCAVENGER
+ match access-group name DNA-APIC_QOS_IN#SCAVENGER__acl
+class-map match-any DNA-EZQOS_2P6Q3T_9K#VIDEO-PQ2
+ match dscp cs5 
+ match dscp cs4 
+class-map match-any DNA-APIC_QOS_IN#SIGNALING
+ match access-group name DNA-APIC_QOS_IN#SIGNALING__acl
+class-map match-any DNA-APIC_QOS_IN#BROADCAST
+ match access-group name DNA-APIC_QOS_IN#BROADCAST__acl
+class-map match-any DNA-APIC_QOS_IN#BULK_DATA
+ match access-group name DNA-APIC_QOS_IN#BULK_DATA__acl
+class-map match-any DNA-EZQOS_2P6Q3T_9K#VOICE-PQ1
+ match dscp ef 
+class-map match-any system-cpp-police-stackwise-virt-control
+  description Stackwise Virtual OOB
+class-map match-any DNA-APIC_QOS_IN#MM_CONF
+ match access-group name DNA-APIC_QOS_IN#MM_CONF__acl
+class-map match-any system-cpp-police-control-low-priority
+  description General punt
+class-map match-any DNA-APIC_QOS_IN#MM_STREAM
+ match access-group name DNA-APIC_QOS_IN#MM_STREAM__acl
+class-map match-any DNA-APIC_QOS_IN#OAM
+ match access-group name DNA-APIC_QOS_IN#OAM__acl
+class-map match-any non-client-nrt-class
+class-map match-any system-cpp-police-routing-control
+  description Routing control and Low Latency
+class-map match-any system-cpp-police-protocol-snooping
+  description Protocol snooping
+class-map match-any system-cpp-police-dhcp-snooping
+  description DHCP snooping
+class-map match-any DNA-EZQOS_2P6Q3T_9K#TRANSACTIONAL-DATA
+ match dscp af23 
+ match dscp af21 
+ match dscp af22 
+class-map match-any system-cpp-police-ios-routing
+  description L2 control, Topology control, Routing control, Low Latency
+class-map match-any system-cpp-police-system-critical
+  description System Critical and Gold Pkt
+class-map match-any DNA-EZQOS_2P6Q3T_9K#MULTIMEDIA-STREAMING
+ match dscp af32 
+ match dscp af33 
+ match dscp af31 
+class-map match-any system-cpp-police-ios-feature
+  description ICMPGEN,BROADCAST,ICMP,L2LVXCntrl,ProtoSnoop,PuntWebauth,MCASTData,Transit,DOT1XAuth,Swfwd,LOGGING,L2LVXData,ForusTraffic,ForusARP,McastEndStn,Openflow,Exception,EGRExcption,NflSampled,RpfFailed
+!
+policy-map DNA-APIC_QOS_IN
+ class DNA-APIC_QOS_IN#VOICE
+  set dscp ef
+ class DNA-APIC_QOS_IN#BROADCAST
+  set dscp cs5
+ class DNA-APIC_QOS_IN#REALTIME
+  set dscp cs4
+ class DNA-APIC_QOS_IN#MM_CONF
+  set dscp af41
+ class DNA-APIC_QOS_IN#MM_STREAM
+  set dscp af31
+ class DNA-APIC_QOS_IN#SIGNALING
+  set dscp cs3
+ class DNA-APIC_QOS_IN#OAM
+  set dscp cs2
+ class DNA-APIC_QOS_IN#TRANS_DATA
+  set dscp af21
+ class DNA-APIC_QOS_IN#BULK_DATA
+  set dscp af11
+ class DNA-APIC_QOS_IN#SCAVENGER
+  set dscp cs1
+ class DNA-APIC_QOS_IN#TUNNELED
+ class class-default
+  set dscp default
+policy-map system-cpp-policy
+ class system-cpp-police-l2-control
+  police rate 500 pps
+ class system-cpp-police-routing-control
+  police rate 1800 pps
+ class system-cpp-police-control-low-priority
+  police rate 200 pps
+policy-map DNA-dscp#APIC_QOS_Q_OUT
+ class DNA-EZQOS_2P6Q3T_9K#VOICE-PQ1
+  priority level 1
+  police rate percent 10
+  queue-buffers ratio 5
+ class DNA-EZQOS_2P6Q3T_9K#VIDEO-PQ2
+  priority level 2
+  police rate percent 23
+  queue-buffers ratio 5
+ class DNA-EZQOS_2P6Q3T_9K#CONTROL-PLANE
+  bandwidth remaining percent 10 
+  queue-buffers ratio 5
+ class DNA-EZQOS_2P6Q3T_9K#MULTIMEDIA-CONFERENCING
+  bandwidth remaining percent 15 
+  queue-buffers ratio 10
+  queue-limit dscp af41 percent 100
+  queue-limit dscp af42 percent 90
+  queue-limit dscp af43 percent 80
+ class DNA-EZQOS_2P6Q3T_9K#MULTIMEDIA-STREAMING
+  bandwidth remaining percent 15 
+  queue-buffers ratio 10
+  queue-limit dscp af32 percent 90
+  queue-limit dscp af33 percent 80
+ class DNA-EZQOS_2P6Q3T_9K#TRANSACTIONAL-DATA
+  bandwidth remaining percent 15 
+  queue-buffers ratio 10
+  random-detect dscp-based
+  random-detect dscp 18 percent 80 100
+  random-detect dscp 20 percent 70 100
+  random-detect dscp 22 percent 60 100
+ class DNA-EZQOS_2P6Q3T_9K#BULK-DATA
+  bandwidth remaining percent 7 
+  queue-buffers ratio 10
+  random-detect dscp-based
+  random-detect dscp 8 percent 60 100
+  random-detect dscp 10 percent 80 100
+  random-detect dscp 12 percent 70 100
+  random-detect dscp 14 percent 60 100
+ class class-default
+  bandwidth remaining percent 38 
+  queue-buffers ratio 25
+  random-detect dscp-based
+  random-detect dscp 0 percent 80 100
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.2.2.3 255.255.255.0
+!
+interface Loopback1
+ ip address 192.168.11.5 255.255.255.0
+!
+interface GigabitEthernet0/0
+ vrf forwarding Mgmt-vrf
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface TenGigabitEthernet1/0/1
+ description link to host hostA
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/2
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/3
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/4
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/5
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/6
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/7
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/8
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/9
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/10
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/11
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/12
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/13
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/14
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/15
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/16
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/17
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/18
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/19
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/20
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/21
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/22
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/23
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/0/24
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface GigabitEthernet1/1/1
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface GigabitEthernet1/1/2
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface GigabitEthernet1/1/3
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface GigabitEthernet1/1/4
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/1/1
+ description P2P link cs3850
+ no switchport
+ ip address 10.10.22.66 255.255.255.252
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/1/2
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/1/3
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/1/4
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/1/5
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/1/6
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/1/7
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TenGigabitEthernet1/1/8
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface FortyGigabitEthernet1/1/1
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface FortyGigabitEthernet1/1/2
+ device-tracking attach-policy IPDT_MAX_10
+ service-policy input DNA-APIC_QOS_IN
+ service-policy output DNA-dscp#APIC_QOS_Q_OUT
+!
+interface TwentyFiveGigE1/1/1
+!
+interface TwentyFiveGigE1/1/2
+!
+interface AppGigabitEthernet1/0/1
+!
+interface Vlan1
+ ip address 10.10.22.97 255.255.255.240
+!
+router lisp
+ locator-table default
+ locator-set rloc_21335daf-f5a1-4e97-970f-ce4eaec339f6
+  IPv4-interface Loopback0 priority 10 weight 10
+  auto-discover-rlocs
+  exit-locator-set
+ !
+ service ipv4
+  encapsulation vxlan
+  itr map-resolver 10.2.2.3
+  etr map-server 10.2.2.3 key 7 xxxxxxxx
+  etr map-server 10.2.2.3 proxy-reply
+  etr
+  sgt
+  no map-cache away-eids send-map-request
+  use-petr 10.2.2.4
+  proxy-itr 10.2.2.3
+  map-server
+  map-resolver
+  exit-service-ipv4
+ !
+ service ethernet
+  database-mapping limit dynamic 5000
+  itr map-resolver 10.2.2.3
+  itr
+  etr map-server 10.2.2.3 key 7 xxxxxxxx
+  etr map-server 10.2.2.3 proxy-reply
+  etr
+  map-server
+  map-resolver
+  exit-service-ethernet
+ !
+ site site_uci
+  description map-server configured from Cisco DNA-Center
+  authentication-key 7 xxxxxxxxx
+  exit-site
+ !
+ ipv4 locator reachability exclude-default
+ ipv4 source-locator Loopback0
+ exit-router-lisp
+!
+router ospf 3
+ network 10.10.22.0 0.0.0.255 area 1
+!
+router bgp 6500
+ bgp router-id interface Loopback0
+ bgp log-neighbor-changes
+ bgp graceful-restart
+ neighbor 10.2.2.4 remote-as 6500
+ neighbor 10.2.2.4 update-source Loopback0
+ !
+ address-family vpnv4
+  neighbor 10.2.2.4 activate
+  neighbor 10.2.2.4 send-community both
+  neighbor 10.2.2.4 route-reflector-client
+  neighbor 10.2.2.4 route-map tag_local_eids out
+ exit-address-family
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+ip http client source-interface TenGigabitEthernet1/1/1
+ip ssh source-interface TenGigabitEthernet1/1/1
+ip ssh version 2
+!
+ip community-list 1 permit 655370
+!
+ip access-list extended DNA-APIC_QOS_IN#BROADCAST__acl
+ 10 remark dmp
+ 10 permit tcp any any eq 7777
+ip access-list extended DNA-APIC_QOS_IN#BULK_DATA__acl
+ 10 remark mpp
+ 10 permit tcp any any eq 218
+ 20 permit udp any any eq 218
+ 30 remark groupwise
+ 30 permit tcp any any eq 1677
+ 40 permit udp any any eq 1677
+ 50 remark ni-mail
+ 50 permit tcp any any eq 61
+ 60 permit udp any any eq 61
+ 70 remark ndmp
+ 70 permit tcp any any eq 10000
+ 80 remark tapeware
+ 80 permit tcp any any eq 3817
+ 90 permit udp any any eq 3817
+ 100 remark mail-service
+ 100 permit udp any any eq bootps
+ 110 permit udp any any eq bootpc
+ 120 remark xns-courier
+ 120 permit tcp any any eq 165
+ 130 permit udp any any eq 165
+ 140 remark iscsi
+ 140 permit tcp any any eq 860
+ 150 permit udp any any eq 860
+ 160 permit udp any any eq 3260
+ 170 remark bmpp
+ 170 permit tcp any any eq 632
+ 180 permit udp any any eq 632
+ 190 remark hp-pdl-datastr
+ 190 permit tcp any any eq 9100
+ 200 permit udp any any eq 9100
+ 210 remark odmr
+ 210 permit tcp any any eq 366
+ 220 permit udp any any eq 366
+ 230 remark dwr
+ 230 permit tcp any any eq 644
+ 240 permit udp any any eq 644
+ 250 remark msexch-routing
+ 250 permit tcp any any eq 691
+ 260 permit udp any any eq 691
+ 270 remark qmqp
+ 270 permit tcp any any eq 628
+ 280 permit udp any any eq 628
+ 290 remark secure-smtp
+ 290 permit tcp any any eq 465
+ 300 permit udp any any eq 465
+ 310 remark secure-pop3
+ 310 permit tcp any any eq 995
+ 320 permit udp any any eq 995
+ 330 remark imsp
+ 330 permit tcp any any eq 406
+ 340 permit udp any any eq 406
+ 350 remark pop2
+ 350 permit tcp any any eq pop2
+ 360 permit udp any any eq 109
+ 370 remark pop3
+ 370 permit tcp any any eq pop3
+ 380 remark smartpackets
+ 380 permit tcp any any eq 3218
+ 390 permit udp any any eq 3218
+ 400 remark smtp
+ 400 permit tcp any any eq ftp
+ 410 permit tcp any any eq smtp
+ 420 permit tcp any any eq 587
+ 430 permit tcp any any eq 21000
+ 440 permit udp any any eq 25
+ 450 remark oracle-bi
+ 450 permit tcp any any eq 9703
+ 460 permit tcp any any eq 9704
+ 470 remark qmtp
+ 470 permit tcp any any eq 209
+ 480 permit udp any any eq 209
+ 490 remark novastorbakcup
+ 490 permit tcp any any eq 308
+ 500 permit udp any any eq 308
+ 510 remark imap
+ 510 permit tcp any any eq 143
+ 520 permit tcp any any eq 220
+ 530 permit udp any any eq 143
+ 540 permit udp any any eq 220
+ 550 remark exchange
+ 550 permit tcp any any eq msrpc
+ 560 remark rsync
+ 560 permit tcp any any eq 873
+ 570 permit udp any any eq 873
+ 580 remark ulistproc
+ 580 permit tcp any any eq 372
+ 590 permit udp any any eq 372
+ 600 remark submission
+ 600 permit udp any any eq 587
+ 610 remark td-replica
+ 610 permit tcp any any eq 268
+ 620 permit udp any any eq 268
+ 630 remark eudora-set
+ 630 permit tcp any any eq 592
+ 640 permit udp any any eq 592
+ 650 remark xact-backup
+ 650 permit tcp any any eq 911
+ 660 permit udp any any eq 911
+ 670 remark xns-mail
+ 670 permit tcp any any eq 58
+ 680 permit udp any any eq 58
+ 690 remark msp
+ 690 permit tcp any any eq 18
+ 700 permit udp any any eq 18
+ 710 remark synergy
+ 710 permit tcp any any eq 24800
+ 720 remark re-mail-ck
+ 720 permit tcp any any eq 50
+ 730 permit udp any any eq 50
+ 740 remark secure-imap
+ 740 permit tcp any any eq 993
+ 750 permit udp any any eq 993
+ 760 remark afpovertcp
+ 760 permit tcp any any eq 548
+ 770 permit udp any any eq 548
+ 780 remark lotus-notes
+ 780 permit tcp any any eq 1352
+ 790 permit udp any any eq 1352
+ 800 remark corba-iiop-ssl
+ 800 permit tcp any any eq 684
+ 810 permit udp any any eq 684
+ 820 remark mailq
+ 820 permit tcp any any eq 174
+ 830 permit udp any any eq 174
+ip access-list extended DNA-APIC_QOS_IN#MM_CONF__acl
+ 10 remark cisco-collaboration
+ 10 permit udp any any eq tftp
+ 20 remark zoom-meetings
+ 20 permit tcp any any eq 8801
+ 30 permit tcp any any eq 8802
+ 40 permit udp any any eq 8801
+ 50 permit udp any any eq 8802
+ip access-list extended DNA-APIC_QOS_IN#MM_STREAM__acl
+ 10 remark pcoip
+ 10 permit tcp any any eq 4172
+ 20 remark citrix-static
+ 20 permit tcp any any eq 1604
+ 30 permit tcp any any eq 2512
+ 40 permit tcp any any eq 2513
+ 50 permit udp any any eq 1604
+ 60 permit udp any any eq 2512
+ 70 permit udp any any eq 2513
+ 80 remark radmin-port
+ 80 permit tcp any any eq 4899
+ 90 permit udp any any eq 4899
+ 100 remark apple-remote-desktop
+ 100 permit tcp any any eq 3283
+ 110 permit tcp any any eq 5800
+ 120 permit tcp any any eq 5900
+ 130 permit tcp any any eq 5901
+ 140 permit udp any any eq 3283
+ 150 permit udp any any eq 5800
+ 160 permit udp any any eq 5900
+ 170 permit udp any any eq 5901
+ 180 remark citrix
+ 180 permit tcp any any eq 1080
+ 190 permit tcp any any eq 1494
+ 200 permit tcp any any eq 2598
+ 210 remark xwindows
+ 210 permit tcp any any eq 6000
+ 220 permit tcp any any eq 6001
+ 230 permit tcp any any eq 6002
+ 240 permit tcp any any eq 6003
+ 250 remark ms-wbt
+ 250 permit tcp any any eq 3389
+ 260 remark timbuktu
+ 260 permit tcp any any eq 407
+ 270 permit udp any any eq 407
+ 280 remark vmware-vmotion
+ 280 permit tcp any any eq 8000
+ip access-list extended DNA-APIC_QOS_IN#OAM__acl
+ 10 remark tacacs
+ 10 permit tcp any any eq tacacs
+ 20 permit tcp any any eq 65
+ 30 permit udp any any eq tacacs
+ 40 permit udp any any eq 65
+ 50 remark secure-telnet
+ 50 permit tcp any any eq 992
+ 60 permit udp any any eq 992
+ 70 remark active-directory
+ 70 permit tcp any any eq 139
+ 80 permit tcp any any eq 389
+ 90 permit tcp any any eq 445
+ 100 permit udp any any eq 389
+ 110 remark cisco-sys
+ 110 permit tcp any any eq 132
+ 120 permit udp any any eq 132
+ 130 remark dhcpv6-client
+ 130 permit tcp any any eq 546
+ 140 permit udp any any eq 546
+ 150 remark dns
+ 150 permit tcp any any eq domain
+ 160 permit tcp any any eq 5353
+ 170 permit udp any any eq domain
+ 180 permit udp any any eq 5353
+ 190 remark nsiiops
+ 190 permit tcp any any eq 261
+ 200 permit udp any any eq 261
+ 210 remark auth
+ 210 permit tcp any any eq ident
+ 220 permit udp any any eq 113
+ 230 remark exec
+ 230 permit tcp any any eq exec
+ 240 remark cisco-fna
+ 240 permit tcp any any eq 130
+ 250 permit udp any any eq 130
+ 260 remark at-zis
+ 260 permit tcp any any eq 206
+ 270 permit udp any any eq 206
+ 280 remark asip-webadmin
+ 280 permit tcp any any eq 311
+ 290 permit udp any any eq 311
+ 300 remark radius
+ 300 permit udp any any eq 1812
+ 310 permit udp any any eq 1813
+ 320 remark rsvp-encap-1
+ 320 permit tcp any any eq 1698
+ 330 permit udp any any eq 1698
+ 340 remark bacnet
+ 340 permit tcp any any eq 47808
+ 350 permit udp any any eq 47808
+ 360 remark sshell
+ 360 permit tcp any any eq 614
+ 370 permit udp any any eq 614
+ 380 remark aminet
+ 380 permit tcp any any eq 2639
+ 390 permit udp any any eq 2639
+ 400 remark alpes
+ 400 permit tcp any any eq 463
+ 410 permit udp any any eq 463
+ 420 remark websense
+ 420 permit tcp any any eq 15868
+ 430 permit tcp any any eq 15871
+ 440 remark ntp
+ 440 permit udp any any eq ntp
+ 450 remark shell
+ 450 permit tcp any any eq cmd
+ 460 remark netbios-ssn
+ 460 permit udp any any eq netbios-ss
+ 470 remark gkrellm
+ 470 permit tcp any any eq 19150
+ 480 remark finger
+ 480 permit tcp any any eq finger
+ 490 permit udp any any eq 79
+ 500 remark echo
+ 500 permit tcp any any eq echo
+ 510 permit udp any any eq echo
+ 520 remark auditd
+ 520 permit tcp any any eq 48
+ 530 permit udp any any eq 48
+ 540 remark ssh
+ 540 permit tcp any any eq 22
+ 550 remark cisco-tna
+ 550 permit tcp any any eq 131
+ 560 permit udp any any eq 131
+ 570 remark dhcp-failover
+ 570 permit tcp any any eq 647
+ 580 permit udp any any eq 647
+ 590 remark hp-collector
+ 590 permit tcp any any eq 381
+ 600 permit udp any any eq 381
+ 610 remark msft-gc
+ 610 permit tcp any any eq 3268
+ 620 permit udp any any eq 3268
+ 630 remark at-nbp
+ 630 permit tcp any any eq 202
+ 640 permit udp any any eq 202
+ 650 remark login
+ 650 permit tcp any any eq login
+ 660 remark telnet
+ 660 permit tcp any any eq telnet
+ 670 remark rsvp-encap-2
+ 670 permit tcp any any eq 1699
+ 680 permit udp any any eq 1699
+ 690 remark kerberos
+ 690 permit tcp any any eq 88
+ 700 permit udp any any eq 88
+ 710 remark at-echo
+ 710 permit tcp any any eq 204
+ 720 permit udp any any eq 204
+ 730 remark snmp
+ 730 permit tcp any any eq 161
+ 740 permit tcp any any eq 162
+ 750 permit tcp any any eq 1161
+ 760 permit tcp any any eq 1162
+ 770 permit udp any any eq snmp
+ 780 permit udp any any eq snmptrap
+ 790 remark agentx
+ 790 permit tcp any any eq 705
+ 800 permit udp any any eq 705
+ 810 remark bb
+ 810 permit tcp any any eq 1984
+ 820 permit udp any any eq 1984
+ 830 remark netbios-ns
+ 830 permit tcp any any eq 137
+ 840 permit udp any any eq netbios-ns
+ 850 remark msft-gc-ssl
+ 850 permit tcp any any eq 3269
+ 860 permit udp any any eq 3269
+ 870 remark dhcpv6-server
+ 870 permit tcp any any eq 547
+ 880 permit udp any any eq 547
+ 890 remark syslog
+ 890 permit udp any any eq syslog
+ 900 remark novadigm
+ 900 permit tcp any any eq 3460
+ 910 permit tcp any any eq 3461
+ 920 permit tcp any any eq 3462
+ 930 permit tcp any any eq 3463
+ 940 permit tcp any any eq 3464
+ 950 permit tcp any any eq 3465
+ 960 permit udp any any eq 3460
+ 970 permit udp any any eq 3461
+ 980 permit udp any any eq 3462
+ 990 permit udp any any eq 3463
+ 1000 permit udp any any eq 3464
+ 1010 permit udp any any eq 3465
+ 1020 remark acap
+ 1020 permit tcp any any eq 674
+ 1030 permit udp any any eq 674
+ 1040 remark asipregistry
+ 1040 permit tcp any any eq 687
+ 1050 permit udp any any eq 687
+ 1060 remark aruba-papi
+ 1060 permit udp any any eq 8211
+ 1070 remark secure-ldap
+ 1070 permit tcp any any eq 636
+ 1080 permit udp any any eq 636
+ 1090 remark dhcp-failover2
+ 1090 permit tcp any any eq 847
+ 1100 permit udp any any eq 847
+ 1110 remark cisco-rtmt
+ 1110 permit tcp any any eq 1090
+ 1120 remark netbios-dgm
+ 1120 permit tcp any any eq 138
+ 1130 permit udp any any eq netbios-dgm
+ip access-list extended DNA-APIC_QOS_IN#SCAVENGER__acl
+ 10 remark vdolive
+ 10 permit tcp any any eq 7000
+ 20 remark appleqtcsrvr
+ 20 permit tcp any any eq 545
+ 30 permit udp any any eq 545
+ 40 remark irc
+ 40 permit tcp any any eq irc
+ 50 permit udp any any eq 194
+ 60 remark fasttrack-static
+ 60 permit tcp any any eq 1214
+ 70 permit udp any any eq 1214
+ 80 remark call-of-duty
+ 80 permit tcp any any eq 20500
+ 90 permit tcp any any eq 20510
+ 100 permit tcp any any eq 28960
+ 110 permit udp any any eq 20500
+ 120 remark edonkey-static
+ 120 permit tcp any any eq 4661
+ 130 permit tcp any any eq 4663
+ 140 permit tcp any any eq 4664
+ 150 permit tcp any any eq 4665
+ 160 permit tcp any any eq 4672
+ 170 permit tcp any any eq 4673
+ 180 permit tcp any any eq 4711
+ 190 permit tcp any any eq 5662
+ 200 permit tcp any any eq 5773
+ 210 permit tcp any any eq 5783
+ 220 permit udp any any eq 4661
+ 230 permit udp any any eq 4662
+ 240 permit udp any any eq 4663
+ 250 permit udp any any eq 4664
+ 260 permit udp any any eq 4665
+ 270 permit udp any any eq 4672
+ 280 permit udp any any eq 4673
+ 290 permit udp any any eq 4711
+ 300 permit udp any any eq 5662
+ 310 permit udp any any eq 5773
+ 320 permit udp any any eq 5783
+ 330 remark directplay
+ 330 permit tcp any any eq 2234
+ 340 permit udp any any eq 2234
+ 350 remark skype
+ 350 permit tcp any any eq 33033
+ 360 remark yahoo-messenger
+ 360 permit tcp any any eq 5050
+ 370 permit tcp any any eq 5101
+ 380 remark ntalk
+ 380 permit tcp any any eq 518
+ 390 permit udp any any eq 518
+ 400 remark directconnect
+ 400 permit tcp any any eq 411
+ 410 permit tcp any any eq 412
+ 420 permit tcp any any eq 413
+ 430 remark gotodevice
+ 430 permit tcp any any eq 2217
+ 440 permit udp any any eq 2217
+ 450 remark doom
+ 450 permit tcp any any eq 666
+ 460 permit udp any any eq 666
+ 470 remark qq-games
+ 470 permit udp any any eq 1863
+ 480 remark irc-serv
+ 480 permit tcp any any eq 529
+ 490 permit udp any any eq 529
+ 500 remark nmsp
+ 500 permit tcp any any eq 537
+ 510 permit udp any any eq 537
+ 520 remark nntp
+ 520 permit tcp any any eq nntp
+ 530 remark conference
+ 530 permit tcp any any eq 531
+ 540 permit udp any any eq 531
+ 550 remark msnp
+ 550 permit tcp any any eq 1863
+ 560 remark directv-tick
+ 560 permit tcp any any eq 3336
+ 570 permit udp any any eq 3336
+ 580 remark game-spy
+ 580 permit tcp any any eq 6500
+ 590 permit tcp any any eq 28900
+ 600 permit udp any any eq 6515
+ 610 permit udp any any eq 27900
+ 620 remark aol-messenger
+ 620 permit tcp any any eq 5190
+ 630 remark Konspire2b
+ 630 permit tcp any any eq 6085
+ 640 permit udp any any eq 6085
+ 650 remark appleqtc
+ 650 permit tcp any any eq 458
+ 660 permit udp any any eq 458
+ 670 remark netshow
+ 670 permit tcp any any eq 1755
+ 680 remark directv-soft
+ 680 permit tcp any any eq 3335
+ 690 permit udp any any eq 3335
+ 700 remark edonkey
+ 700 permit tcp any any eq 4662
+ 710 remark networking-gnutella
+ 710 permit udp any any eq 6346
+ 720 permit udp any any eq 6347
+ 730 permit udp any any eq 6348
+ 740 remark secure-nntp
+ 740 permit tcp any any eq 563
+ 750 permit udp any any eq 563
+ 760 remark cuseeme
+ 760 permit tcp any any eq 7648
+ 770 permit tcp any any eq 7649
+ 780 permit udp any any eq 7648
+ 790 permit udp any any eq 7649
+ 800 permit udp any any eq 24032
+ 810 remark kali
+ 810 permit tcp any any eq 2213
+ 820 permit udp any any eq 2213
+ 830 remark bnet
+ 830 permit tcp any any eq 415
+ 840 permit udp any any eq 415
+ 850 remark bittorrent
+ 850 permit tcp any any eq 3544
+ 860 permit tcp any any eq 6881
+ 870 permit tcp any any eq 6882
+ 880 permit tcp any any eq 6883
+ 890 permit tcp any any eq 6884
+ 900 permit tcp any any eq 6885
+ 910 permit tcp any any eq 6886
+ 920 permit tcp any any eq 6887
+ 930 permit tcp any any eq 6888
+ 940 permit tcp any any eq 6889
+ 950 permit udp any any eq 3544
+ 960 permit udp any any eq 3545
+ 970 remark directv-catlg
+ 970 permit tcp any any eq 3337
+ 980 permit udp any any eq 3337
+ 990 remark mecomm
+ 990 permit tcp any any eq 668
+ 1000 permit udp any any eq 668
+ 1010 remark blizwow
+ 1010 permit tcp any any eq 3724
+ 1020 permit udp any any eq 3724
+ 1030 remark rdt
+ 1030 permit tcp any any eq 6970
+ 1040 remark hap
+ 1040 permit tcp any any eq 661
+ 1050 permit udp any any eq 661
+ 1060 remark manolito
+ 1060 permit udp any any eq 41170
+ 1070 remark cooltalk
+ 1070 permit tcp any any eq 6499
+ 1080 remark directplay8
+ 1080 permit tcp any any eq 6073
+ 1090 permit udp any any eq 6073
+ 1100 remark goboogy
+ 1100 permit tcp any any eq 5325
+ 1110 permit udp any any eq 5325
+ 1120 remark directv-web
+ 1120 permit tcp any any eq 3334
+ 1130 permit udp any any eq 3334
+ip access-list extended DNA-APIC_QOS_IN#SIGNALING__acl
+ 10 remark cisco-phone-control
+ 10 permit tcp any any eq 2000
+ 20 permit tcp any any eq 2001
+ 30 permit tcp any any eq 2002
+ 40 remark prm-nm
+ 40 permit tcp any any eq 409
+ 50 permit udp any any eq 409
+ 60 remark prm-sm
+ 60 permit tcp any any eq 408
+ 70 permit udp any any eq 408
+ 80 remark ups
+ 80 permit tcp any any eq 401
+ 90 permit udp any any eq 401
+ 100 remark mgcp
+ 100 permit tcp any any eq 2427
+ 110 permit tcp any any eq 2428
+ 120 permit tcp any any eq 2727
+ 130 permit udp any any eq 2427
+ 140 permit udp any any eq 2727
+ 150 remark datex-asn
+ 150 permit tcp any any eq 355
+ 160 permit udp any any eq 355
+ 170 remark rpc2portmap
+ 170 permit tcp any any eq 369
+ 180 permit udp any any eq 369
+ 190 remark sgcp
+ 190 permit tcp any any eq 440
+ 200 permit udp any any eq 440
+ 210 remark rtsp
+ 210 permit tcp any any eq 554
+ 220 permit tcp any any eq 8554
+ 230 remark cisco-jabber-control
+ 230 permit tcp any any eq 5060
+ 240 permit udp any any eq 5060
+ 250 remark sflow
+ 250 permit tcp any any eq 6343
+ 260 permit udp any any eq 6343
+ 270 remark tpip
+ 270 permit tcp any any eq 594
+ 280 permit udp any any eq 594
+ 290 remark ms-lync-control
+ 290 permit tcp any any eq 5061
+ 300 permit udp any any eq 5061
+ 310 remark snpp
+ 310 permit tcp any any eq 444
+ 320 permit udp any any eq 444
+ 330 remark spsc
+ 330 permit tcp any any eq 478
+ 340 permit udp any any eq 478
+ 350 remark h323
+ 350 permit tcp any any eq 1300
+ 360 permit tcp any any eq 1718
+ 370 permit tcp any any eq 1719
+ 380 permit tcp any any eq 1720
+ 390 permit tcp any any eq 11720
+ 400 permit udp any any eq 1300
+ 410 permit udp any any eq 1718
+ 420 permit udp any any eq 1719
+ 430 permit udp any any eq 1720
+ 440 permit udp any any eq 11720
+ 450 remark svrloc
+ 450 permit tcp any any eq 427
+ 460 permit udp any any eq 427
+ 470 remark ss7ns
+ 470 permit tcp any any eq 477
+ 480 permit udp any any eq 477
+ 490 remark rtcp
+ 490 permit tcp any any eq 3478
+ 500 permit udp any any eq 3478
+ 510 remark dnp
+ 510 permit tcp any any eq 19999
+ 520 permit tcp any any eq 20000
+ 530 permit udp any any eq 19999
+ 540 permit udp any any eq 20000
+ 550 remark rtsps
+ 550 permit tcp any any eq 322
+ 560 permit udp any any eq 322
+ 570 remark rsvp_tunnel
+ 570 permit tcp any any eq 363
+ 580 permit udp any any eq 363
+ 590 remark netvmg-traceroute
+ 590 permit udp any any eq 33435
+ip access-list extended DNA-APIC_QOS_IN#TRANS_DATA__acl
+ 10 remark corba-iiop
+ 10 permit tcp any any eq 683
+ 20 permit udp any any eq 683
+ 30 remark http-rpc-epmap
+ 30 permit tcp any any eq 593
+ 40 permit udp any any eq 593
+ 50 remark oraclenames
+ 50 permit tcp any any eq 1575
+ 60 permit udp any any eq 1575
+ 70 remark epmap
+ 70 permit udp any any eq 135
+ 80 remark iiop
+ 80 permit tcp any any eq 535
+ 90 permit udp any any eq 535
+ 100 remark semantix
+ 100 permit tcp any any eq 361
+ 110 permit udp any any eq 361
+ 120 remark sqlserv
+ 120 permit tcp any any eq 118
+ 130 permit udp any any eq 118
+ 140 remark banyan-rpc
+ 140 permit tcp any any eq 567
+ 150 permit udp any any eq 567
+ 160 remark sqlexec
+ 160 permit tcp any any eq 9088
+ 170 permit udp any any eq 9088
+ 180 remark mumps
+ 180 permit tcp any any eq 188
+ 190 permit udp any any eq 188
+ 200 remark esro-gen
+ 200 permit tcp any any eq 259
+ 210 permit udp any any eq 259
+ 220 remark postgresql
+ 220 permit tcp any any eq 5432
+ 230 permit udp any any eq 5432
+ 240 remark dbase
+ 240 permit tcp any any eq 217
+ 250 permit udp any any eq 217
+ 260 remark tlisrv
+ 260 permit tcp any any eq 1527
+ 270 permit udp any any eq 1527
+ 280 remark coauthor
+ 280 permit tcp any any eq 1529
+ 290 permit udp any any eq 1529
+ 300 remark net8-cman
+ 300 permit tcp any any eq 1830
+ 310 permit udp any any eq 1830
+ 320 remark rdb-dbs-disp
+ 320 permit tcp any any eq 1571
+ 330 permit udp any any eq 1571
+ 340 remark ddm-ssl
+ 340 permit tcp any any eq 448
+ 350 permit udp any any eq 448
+ 360 remark ingres-net
+ 360 permit tcp any any eq 134
+ 370 permit udp any any eq 134
+ 380 remark ms-olap
+ 380 permit tcp any any eq 2393
+ 390 permit udp any any eq 2393
+ 400 remark sqlserver
+ 400 permit tcp any any eq 1433
+ 410 permit udp any any eq 1433
+ 420 remark ms-sql-m
+ 420 permit tcp any any eq 1434
+ 430 permit udp any any eq 1434
+ 440 remark cisco-jabber-im
+ 440 permit tcp any any eq 5222
+ 450 permit udp any any eq 5222
+ 460 remark ibm-db2
+ 460 permit tcp any any eq 523
+ 470 permit udp any any eq 523
+ 480 remark ddm-rdb
+ 480 permit tcp any any eq 446
+ 490 permit udp any any eq 446
+ 500 remark orbix-locator
+ 500 permit tcp any any eq 3075
+ 510 permit udp any any eq 3075
+ 520 remark orbix-config
+ 520 permit tcp any any eq 3076
+ 530 permit udp any any eq 3076
+ 540 remark sunrpc
+ 540 permit tcp any any eq sunrpc
+ 550 permit tcp any any eq 371
+ 560 permit tcp any any eq 2049
+ 570 permit udp any any eq sunrpc
+ 580 permit udp any any eq 371
+ 590 permit udp any any eq 2049
+ 600 remark sql-net
+ 600 permit tcp any any eq 150
+ 610 permit udp any any eq 150
+ 620 remark orbix-cfg-ssl
+ 620 permit tcp any any eq 3078
+ 630 permit udp any any eq 3078
+ 640 remark sap
+ 640 permit tcp any any eq 3200
+ 650 permit tcp any any eq 3300
+ 660 permit tcp any any eq 3600
+ 670 remark ora-srv
+ 670 permit tcp any any eq 1525
+ 680 permit udp any any eq 1525
+ 690 remark orbix-loc-ssl
+ 690 permit tcp any any eq 3077
+ 700 permit udp any any eq 3077
+ 710 remark oraclenet8cman
+ 710 permit tcp any any eq 1630
+ 720 permit udp any any eq 1630
+ 730 remark rda
+ 730 permit tcp any any eq 630
+ 740 permit udp any any eq 630
+ 750 remark lockd
+ 750 permit tcp any any eq 4045
+ 760 permit udp any any eq 4045
+ 770 remark mfcobol
+ 770 permit tcp any any eq 86
+ 780 permit udp any any eq 86
+ 790 remark oracle-sqlnet
+ 790 permit tcp any any eq 66
+ 800 remark gds_db
+ 800 permit tcp any any eq 3050
+ 810 permit udp any any eq 3050
+ 820 remark distcc
+ 820 permit tcp any any eq 3632
+ 830 permit udp any any eq 3632
+ 840 remark webex-app-sharing
+ 840 permit udp any any eq 9000
+ 850 remark ddm-dfm
+ 850 permit tcp any any eq 447
+ 860 permit udp any any eq 447
+ 870 remark sqlsrv
+ 870 permit tcp any any eq 156
+ 880 permit udp any any eq 156
+ 890 remark vpps-qua
+ 890 permit tcp any any eq 672
+ 900 permit udp any any eq 672
+ 910 remark erpc
+ 910 permit tcp any any eq 121
+ 920 permit udp any any eq 121
+ip access-list extended DNA-APIC_QOS_IN#TUNNELED__acl
+ 10 remark capwap-data
+ 10 permit udp any any eq 5246
+ 20 permit udp any any eq 5247
+!
+!
+ip prefix-list deny_0.0.0.0 seq 10 permit 0.0.0.0/0
+ip radius source-interface Loopback0 
+logging host 10.10.20.101
+logging host 10.10.20.103
+!
+route-map tag_local_eids permit 5 
+ set community 655370
+!
+!
+snmp-server community xxxxxxxx RW
+snmp-server community xxxxxxxx RO
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps flowmon
+snmp-server enable traps entity-perf throughput-notif
+snmp-server enable traps call-home message-send-fail server-fail
+snmp-server enable traps tty
+snmp-server enable traps ospf state-change
+snmp-server enable traps ospf errors
+snmp-server enable traps ospf retransmit
+snmp-server enable traps ospf lsa
+snmp-server enable traps ospf cisco-specific state-change nssa-trans-change
+snmp-server enable traps ospf cisco-specific state-change shamlink interface
+snmp-server enable traps ospf cisco-specific state-change shamlink neighbor
+snmp-server enable traps ospf cisco-specific errors
+snmp-server enable traps ospf cisco-specific retransmit
+snmp-server enable traps ospf cisco-specific lsa
+snmp-server enable traps eigrp
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps rep
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps port-security
+snmp-server enable traps license
+snmp-server enable traps cpu threshold
+snmp-server enable traps memory bufferpeak
+snmp-server enable traps stackwise
+snmp-server enable traps fru-ctrl
+snmp-server enable traps flash insertion removal lowspace
+snmp-server enable traps energywise
+snmp-server enable traps power-ethernet group 1 threshold 80
+snmp-server enable traps power-ethernet police
+snmp-server enable traps entity
+snmp-server enable traps envmon
+snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+snmp-server enable traps lisp
+snmp-server enable traps isis
+snmp-server enable traps ipsla
+snmp-server enable traps entity-diag boot-up-fail hm-test-recover hm-thresh-reached scheduled-test-fail
+snmp-server enable traps bfd
+snmp-server enable traps ike policy add
+snmp-server enable traps ike policy delete
+snmp-server enable traps ike tunnel start
+snmp-server enable traps ike tunnel stop
+snmp-server enable traps ipsec cryptomap add
+snmp-server enable traps ipsec cryptomap delete
+snmp-server enable traps ipsec cryptomap attach
+snmp-server enable traps ipsec cryptomap detach
+snmp-server enable traps ipsec tunnel start
+snmp-server enable traps ipsec tunnel stop
+snmp-server enable traps ipsec too-many-sas
+snmp-server enable traps config-copy
+snmp-server enable traps config
+snmp-server enable traps config-ctid
+snmp-server enable traps dhcp
+snmp-server enable traps event-manager
+snmp-server enable traps hsrp
+snmp-server enable traps ipmulticast
+snmp-server enable traps msdp
+snmp-server enable traps ospfv3 state-change
+snmp-server enable traps ospfv3 errors
+snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps bgp cbgp2
+snmp-server enable traps nhrp nhs
+snmp-server enable traps nhrp nhc
+snmp-server enable traps nhrp nhp
+snmp-server enable traps nhrp quota-exceeded
+snmp-server enable traps mpls rfc ldp
+snmp-server enable traps mpls ldp
+snmp-server enable traps mpls rfc traffic-eng
+snmp-server enable traps mpls traffic-eng
+snmp-server enable traps mpls fast-reroute protected
+snmp-server enable traps local-auth
+snmp-server enable traps vlan-membership
+snmp-server enable traps errdisable
+snmp-server enable traps rf
+snmp-server enable traps transceiver all
+snmp-server enable traps bulkstat collection transfer
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vrfmib vrf-up vrf-down vnet-trunk-up vnet-trunk-down
+snmp-server enable traps mpls vpn
+snmp-server enable traps mpls rfc vpn
+snmp-server host 10.10.20.103 version 2c xxxxxxxx 
+snmp-server host 10.10.20.101 xxxxxxxx
+!
+radius-server attribute 6 on-for-login-auth
+radius-server attribute 6 support-multiple
+radius-server attribute 8 include-in-access-req
+radius-server attribute 25 access-request include
+radius-server dead-criteria time 5 tries 3
+radius-server deadtime 30
+!
+!
+control-plane
+ service-policy input system-cpp-policy
+!
+banner motd ^CCc       C I S C O
+       ||         ||             Cisco Systems Inc.
+       ||         ||             Sandbox, Galway.
+      ||||       ||||
+  ..:||||||:...:||||||:..        >>> SDA (Wolverine) <<<
+
+
+UNAUTHORIZED ACCESS TO THIS NETWORK DEVICE IS PROHIBITED.
+
+       Individuals using this computer system without authority, or in
+       excess of their authority, are subject to having all of their
+       activities on this system monitored and recorded by system
+       personnel.
+
+       Anyone using this system expressly consents to such monitoring
+       and is advised that if such monitoring reveals possible
+       evidence of criminal activity, system personnel may provide the
+       evidence of such monitoring to law enforcement officials.^C
+!
+line con 0
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ privilege level 15
+ transport input telnet ssh
+line vty 5 31
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+!
+!
+!
+!
+!
+!
+end
+

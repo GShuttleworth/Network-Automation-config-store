@@ -1,9 +1,9 @@
 
 Building configuration...
 
-Current configuration : 43546 bytes
+Current configuration : 60269 bytes
 !
-! Last configuration change at 03:12:38 UTC Thu Nov 12 2020 by admin
+! Last configuration change at 11:05:04 UTC Sun Feb 14 2021 by admin
 !
 version 16.6
 no service pad
@@ -44,6 +44,11 @@ switch 1 provision c9300-24ux
 ip routing
 !
 ip name-server 4.4.4.4
+ip dhcp relay information option
+!
+!
+!
+ip dhcp snooping
 !
 !
 !
@@ -52,12 +57,36 @@ ip name-server 4.4.4.4
 !
 !
 !
+device-sensor filter-list lldp list iseLLDP
+ tlv name system-name
+ tlv name system-description
+ tlv name system-capabilities
 !
+device-sensor filter-list dhcp list iseDHCP
+ option name host-name
+ option name parameter-request-list
+ option name class-identifier
 !
+device-sensor filter-list cdp list iseCDP
+ tlv name device-name
+ tlv name capabilities-type
+ tlv name version-type
+ tlv name platform-type
+device-sensor filter-spec dhcp include list iseDHCP
+device-sensor filter-spec lldp include list iseLLDP
+device-sensor filter-spec cdp include list iseCDP
+device-sensor notify all-changes
 !
 flow exporter 10.10.20.101
  destination 10.10.20.101
 !
+access-session attributes filter-list list Def_Acct_List
+ cdp
+ lldp
+ dhcp
+ http
+access-session accounting attributes filter-spec include list Def_Acct_List
+access-session acl default passthrough
 device-tracking tracking
 !
 device-tracking policy IPDT_MAX_10
@@ -68,9 +97,9 @@ device-tracking policy IPDT_MAX_10
 !
 crytpo pki xxxxxxx
  enrollment selfsigned
-certificate xxxx
+ subject-name xxxxxxxx
  revocation-check none
-rsakeypair TP-self-signed- xxxxxxxx
+ rsakeypair TP-self-signed- xxxxxxxx
 !
 crytpo pki xxxxxxx
  enrollment mode ra
@@ -86,87 +115,87 @@ crytpo pki xxxxxxx
  source interface TenGigabitEthernet1/1/1
 !
 !
-certificate xxxx
-certificate xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
+crypto pki certificate chain xxxxxxx
+ certificate self-signed xxxxxxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
 quit
-certificate xxxx
-certificate xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
+crypto pki certificate chain xxxxxxx
+ certificate ca xxxxxxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
 quit
-certificate xxxx
-certificate xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
-xxxx  xxxxx  xxxx  xxxx  xxxx
+crypto pki certificate chain xxxxxxx
+ certificate ca xxxxxxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
+  xxxx  xxxxx  xxxx  xxxx  xxxx
 quit
 !
 !
@@ -174,7 +203,24 @@ quit
 diagnostic bootup level minimal
 spanning-tree mode rapid-pvst
 spanning-tree extend system-id
+service-template webauth-global-inactive
+ inactivity-timer 3600 
+service-template DEFAULT_LINKSEC_POLICY_MUST_SECURE
+ linksec policy must-secure
+service-template DEFAULT_LINKSEC_POLICY_SHOULD_SECURE
+ linksec policy should-secure
+service-template DEFAULT_CRITICAL_VOICE_TEMPLATE
+ voice vlan
+service-template DefaultCriticalAuthVlan_SRV_TEMPLATE
+ sgt 3999
+ vlan 2047
+service-template DefaultCriticalVoice_SRV_TEMPLATE
+ voice vlan
+service-template DefaultCriticalAccess_SRV_TEMPLATE
+ access-group IPV4_CRITICAL_AUTH_ACL
+ access-group IPV6_CRITICAL_AUTH_ACL
 dot1x system-auth-control
+dot1x critical eapol
 !
 username xxxxxxxx 
 username xxxxxxxx privilege 15 password 7 xxxxxxxx
@@ -182,6 +228,68 @@ username xxxxxxxx privilege 15 password 7 xxxxxxxx
 redundancy
  mode sso
 !
+!
+vlan 2045
+ name AP_VLAN
+!
+vlan 2046
+ name VOICE_VLAN
+!
+vlan 2047
+ name CRITICAL_VLAN
+!
+lldp run
+!
+class-map type control subscriber match-all AAA_SVR_DOWN_AUTHD_HOST
+ match authorization-status authorized
+ match result-type aaa-timeout
+!
+class-map type control subscriber match-all AAA_SVR_DOWN_UNAUTHD_HOST
+ match authorization-status unauthorized
+ match result-type aaa-timeout
+!
+class-map type control subscriber match-all AUTHC_SUCCESS-AUTHZ_FAIL
+ match authorization-status unauthorized
+ match result-type success
+!
+class-map type control subscriber match-all DOT1X
+ match method dot1x
+!
+class-map type control subscriber match-all DOT1X_FAILED
+ match method dot1x
+ match result-type method dot1x authoritative
+!
+class-map type control subscriber match-all DOT1X_MEDIUM_PRIO
+ match authorizing-method-priority gt 20
+!
+class-map type control subscriber match-all DOT1X_NO_RESP
+ match method dot1x
+ match result-type method dot1x agent-not-found
+!
+class-map type control subscriber match-all DOT1X_TIMEOUT
+ match method dot1x
+ match result-type method dot1x method-timeout
+!
+class-map type control subscriber match-any IN_CRITICAL_AUTH
+ match activated-service-template DefaultCriticalVoice_SRV_TEMPLATE
+!
+class-map type control subscriber match-any IN_CRITICAL_AUTH_CLOSED_MODE
+ match activated-service-template DefaultCriticalAuthVlan_SRV_TEMPLATE
+ match activated-service-template DefaultCriticalVoice_SRV_TEMPLATE
+!
+class-map type control subscriber match-all MAB
+ match method mab
+!
+class-map type control subscriber match-all MAB_FAILED
+ match method mab
+ match result-type method mab authoritative
+!
+class-map type control subscriber match-none NOT_IN_CRITICAL_AUTH
+ match activated-service-template DefaultCriticalVoice_SRV_TEMPLATE
+!
+class-map type control subscriber match-none NOT_IN_CRITICAL_AUTH_CLOSED_MODE
+ match activated-service-template DefaultCriticalAuthVlan_SRV_TEMPLATE
+ match activated-service-template DefaultCriticalVoice_SRV_TEMPLATE
 !
 !
 class-map match-any DNA-APIC_QOS_IN#TRANS_DATA
@@ -266,6 +374,284 @@ class-map match-any DNA-EZQOS_2P6Q3T_9K#MULTIMEDIA-STREAMING
  match dscp af32 
  match dscp af33 
  match dscp af31 
+!
+policy-map type control subscriber PMAP_DefaultWiredDot1xClosedAuth_1X_MAB
+ event session-started match-all
+  10 class always do-until-failure
+   10 authenticate using dot1x retries 2 retry-time 0 priority 10
+ event authentication-failure match-first
+  5 class DOT1X_FAILED do-until-failure
+   10 terminate dot1x
+   20 authenticate using mab priority 20
+  10 class AAA_SVR_DOWN_UNAUTHD_HOST do-until-failure
+   10 activate service-template DefaultCriticalAuthVlan_SRV_TEMPLATE
+   20 activate service-template DefaultCriticalVoice_SRV_TEMPLATE
+   30 authorize
+   40 pause reauthentication
+  20 class AAA_SVR_DOWN_AUTHD_HOST do-until-failure
+   10 pause reauthentication
+   20 authorize
+  30 class DOT1X_NO_RESP do-until-failure
+   10 terminate dot1x
+   20 authenticate using mab priority 20
+  40 class MAB_FAILED do-until-failure
+   10 terminate mab
+   20 authentication-restart 60
+  60 class always do-until-failure
+   10 terminate dot1x
+   20 terminate mab
+   30 authentication-restart 60
+ event aaa-available match-all
+  10 class IN_CRITICAL_AUTH_CLOSED_MODE do-until-failure
+   10 clear-session
+  20 class NOT_IN_CRITICAL_AUTH_CLOSED_MODE do-until-failure
+   10 resume reauthentication
+ event agent-found match-all
+  10 class always do-until-failure
+   10 terminate mab
+   20 authenticate using dot1x retries 2 retry-time 0 priority 10
+ event inactivity-timeout match-all
+  10 class always do-until-failure
+   10 clear-session
+ event authentication-success match-all
+ event violation match-all
+  10 class always do-until-failure
+   10 restrict
+ event authorization-failure match-all
+  10 class AUTHC_SUCCESS-AUTHZ_FAIL do-until-failure
+   10 authentication-restart 60
+!
+policy-map type control subscriber PMAP_DefaultWiredDot1xClosedAuth_MAB_1X
+ event session-started match-all
+  10 class always do-until-failure
+   10 authenticate using mab priority 20
+ event authentication-failure match-first
+  5 class DOT1X_FAILED do-until-failure
+   10 terminate dot1x
+   20 authentication-restart 60
+  10 class AAA_SVR_DOWN_UNAUTHD_HOST do-until-failure
+   10 activate service-template DefaultCriticalAuthVlan_SRV_TEMPLATE
+   20 activate service-template DefaultCriticalVoice_SRV_TEMPLATE
+   30 authorize
+   40 pause reauthentication
+  20 class AAA_SVR_DOWN_AUTHD_HOST do-until-failure
+   10 pause reauthentication
+   20 authorize
+  30 class MAB_FAILED do-until-failure
+   10 terminate mab
+   20 authenticate using dot1x retries 2 retry-time 0 priority 10
+  40 class DOT1X_NO_RESP do-until-failure
+   10 terminate dot1x
+   20 authentication-restart 60
+  60 class always do-until-failure
+   10 terminate mab
+   20 terminate dot1x
+   30 authentication-restart 60
+ event aaa-available match-all
+  10 class IN_CRITICAL_AUTH_CLOSED_MODE do-until-failure
+   10 clear-session
+  20 class NOT_IN_CRITICAL_AUTH_CLOSED_MODE do-until-failure
+   10 resume reauthentication
+ event agent-found match-all
+  10 class always do-until-failure
+   10 terminate mab
+   20 authenticate using dot1x retries 2 retry-time 0 priority 10
+ event inactivity-timeout match-all
+  10 class always do-until-failure
+   10 clear-session
+ event authentication-success match-all
+ event violation match-all
+  10 class always do-until-failure
+   10 restrict
+ event authorization-failure match-all
+  10 class AUTHC_SUCCESS-AUTHZ_FAIL do-until-failure
+   10 authentication-restart 60
+!
+policy-map type control subscriber PMAP_DefaultWiredDot1xLowImpactAuth_1X_MAB
+ event session-started match-all
+  10 class always do-until-failure
+   10 authenticate using dot1x retries 2 retry-time 0 priority 10
+ event authentication-failure match-first
+  5 class DOT1X_FAILED do-until-failure
+   10 terminate dot1x
+   20 authenticate using mab priority 20
+  10 class AAA_SVR_DOWN_UNAUTHD_HOST do-until-failure
+   10 activate service-template DefaultCriticalAuthVlan_SRV_TEMPLATE
+   20 activate service-template DefaultCriticalVoice_SRV_TEMPLATE
+   25 activate service-template DefaultCriticalAccess_SRV_TEMPLATE
+   30 authorize
+   40 pause reauthentication
+  20 class AAA_SVR_DOWN_AUTHD_HOST do-until-failure
+   10 pause reauthentication
+   20 authorize
+  30 class DOT1X_NO_RESP do-until-failure
+   10 terminate dot1x
+   20 authenticate using mab priority 20
+  40 class MAB_FAILED do-until-failure
+   10 terminate mab
+   20 authentication-restart 60
+  60 class always do-until-failure
+   10 terminate dot1x
+   20 terminate mab
+   30 authentication-restart 60
+ event aaa-available match-all
+  10 class IN_CRITICAL_AUTH do-until-failure
+   10 clear-session
+  20 class NOT_IN_CRITICAL_AUTH do-until-failure
+   10 resume reauthentication
+ event agent-found match-all
+  10 class always do-until-failure
+   10 terminate mab
+   20 authenticate using dot1x retries 2 retry-time 0 priority 10
+ event inactivity-timeout match-all
+  10 class always do-until-failure
+   10 clear-session
+ event authentication-success match-all
+ event violation match-all
+  10 class always do-until-failure
+   10 restrict
+ event authorization-failure match-all
+  10 class AUTHC_SUCCESS-AUTHZ_FAIL do-until-failure
+   10 authentication-restart 60
+!
+policy-map type control subscriber PMAP_DefaultWiredDot1xLowImpactAuth_MAB_1X
+ event session-started match-all
+  10 class always do-until-failure
+   10 authenticate using mab priority 20
+ event authentication-failure match-first
+  5 class DOT1X_FAILED do-until-failure
+   10 terminate dot1x
+   20 authentication-restart 60
+  10 class AAA_SVR_DOWN_UNAUTHD_HOST do-until-failure
+   10 activate service-template DefaultCriticalAuthVlan_SRV_TEMPLATE
+   20 activate service-template DefaultCriticalVoice_SRV_TEMPLATE
+   25 activate service-template DefaultCriticalAccess_SRV_TEMPLATE
+   30 authorize
+   40 pause reauthentication
+  20 class AAA_SVR_DOWN_AUTHD_HOST do-until-failure
+   10 pause reauthentication
+   20 authorize
+  30 class MAB_FAILED do-until-failure
+   10 terminate mab
+   20 authenticate using dot1x retries 2 retry-time 0 priority 10
+  40 class DOT1X_NO_RESP do-until-failure
+   10 terminate dot1x
+   20 authentication-restart 60
+  60 class always do-until-failure
+   10 terminate mab
+   20 terminate dot1x
+   30 authentication-restart 60
+ event aaa-available match-all
+  10 class IN_CRITICAL_AUTH do-until-failure
+   10 clear-session
+  20 class NOT_IN_CRITICAL_AUTH do-until-failure
+   10 resume reauthentication
+ event agent-found match-all
+  10 class always do-until-failure
+   10 terminate mab
+   20 authenticate using dot1x retries 2 retry-time 0 priority 10
+ event inactivity-timeout match-all
+  10 class always do-until-failure
+   10 clear-session
+ event authentication-success match-all
+ event violation match-all
+  10 class always do-until-failure
+   10 restrict
+ event authorization-failure match-all
+  10 class AUTHC_SUCCESS-AUTHZ_FAIL do-until-failure
+   10 authentication-restart 60
+!
+policy-map type control subscriber PMAP_DefaultWiredDot1xOpenAuth_1X_MAB
+ event session-started match-all
+  10 class always do-until-failure
+   10 authenticate using dot1x retries 2 retry-time 0 priority 10
+ event authentication-failure match-first
+  5 class DOT1X_FAILED do-until-failure
+   10 terminate dot1x
+   20 authenticate using mab priority 20
+  10 class AAA_SVR_DOWN_UNAUTHD_HOST do-until-failure
+   10 activate service-template DefaultCriticalAuthVlan_SRV_TEMPLATE
+   20 activate service-template DefaultCriticalVoice_SRV_TEMPLATE
+   30 authorize
+   40 pause reauthentication
+  20 class AAA_SVR_DOWN_AUTHD_HOST do-until-failure
+   10 pause reauthentication
+   20 authorize
+  30 class DOT1X_NO_RESP do-until-failure
+   10 terminate dot1x
+   20 authenticate using mab priority 20
+  40 class MAB_FAILED do-until-failure
+   10 terminate mab
+   20 authentication-restart 60
+  60 class always do-until-failure
+   10 terminate dot1x
+   20 terminate mab
+   30 authentication-restart 60
+ event aaa-available match-all
+  10 class IN_CRITICAL_AUTH do-until-failure
+   10 clear-session
+  20 class NOT_IN_CRITICAL_AUTH do-until-failure
+   10 resume reauthentication
+ event agent-found match-all
+  10 class always do-until-failure
+   10 terminate mab
+   20 authenticate using dot1x retries 2 retry-time 0 priority 10
+ event inactivity-timeout match-all
+  10 class always do-until-failure
+   10 clear-session
+ event authentication-success match-all
+ event violation match-all
+  10 class always do-until-failure
+   10 restrict
+ event authorization-failure match-all
+  10 class AUTHC_SUCCESS-AUTHZ_FAIL do-until-failure
+   10 authentication-restart 60
+!
+policy-map type control subscriber PMAP_DefaultWiredDot1xOpenAuth_MAB_1X
+ event session-started match-all
+  10 class always do-until-failure
+   10 authenticate using mab priority 20
+ event authentication-failure match-first
+  5 class DOT1X_FAILED do-until-failure
+   10 terminate dot1x
+   20 authentication-restart 60
+  10 class AAA_SVR_DOWN_UNAUTHD_HOST do-until-failure
+   10 activate service-template DefaultCriticalAuthVlan_SRV_TEMPLATE
+   20 activate service-template DefaultCriticalVoice_SRV_TEMPLATE
+   30 authorize
+   40 pause reauthentication
+  20 class AAA_SVR_DOWN_AUTHD_HOST do-until-failure
+   10 pause reauthentication
+   20 authorize
+  30 class MAB_FAILED do-until-failure
+   10 terminate mab
+   20 authenticate using dot1x retries 2 retry-time 0 priority 10
+  40 class DOT1X_NO_RESP do-until-failure
+   10 terminate dot1x
+   20 authentication-restart 60
+  60 class always do-until-failure
+   10 terminate mab
+   20 terminate dot1x
+   30 authentication-restart 60
+ event aaa-available match-all
+  10 class IN_CRITICAL_AUTH do-until-failure
+   10 clear-session
+  20 class NOT_IN_CRITICAL_AUTH do-until-failure
+   10 resume reauthentication
+ event agent-found match-all
+  10 class always do-until-failure
+   10 terminate mab
+   20 authenticate using dot1x retries 2 retry-time 0 priority 10
+ event inactivity-timeout match-all
+  10 class always do-until-failure
+   10 clear-session
+ event authentication-success match-all
+ event violation match-all
+  10 class always do-until-failure
+   10 restrict
+ event authorization-failure match-all
+  10 class AUTHC_SUCCESS-AUTHZ_FAIL do-until-failure
+   10 authentication-restart 60
 !
 policy-map DNA-APIC_QOS_IN
  class DNA-APIC_QOS_IN#VOICE
@@ -353,6 +739,41 @@ policy-map DNA-dscp#APIC_QOS_Q_OUT
 !
 !
 !
+!
+!
+template DefaultWiredDot1xClosedAuth
+ dot1x pae authenticator
+ switchport access vlan 2047
+ switchport mode access
+ switchport voice vlan 2046
+ mab
+ access-session closed
+ access-session port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ service-policy type control subscriber PMAP_DefaultWiredDot1xClosedAuth_1X_MAB
+!
+template DefaultWiredDot1xLowImpactAuth
+ dot1x pae authenticator
+ switchport access vlan 2047
+ switchport mode access
+ switchport voice vlan 2046
+ mab
+ access-session port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ service-policy type control subscriber PMAP_DefaultWiredDot1xLowImpactAuth_1X_MAB
+!
+template DefaultWiredDot1xOpenAuth
+ dot1x pae authenticator
+ switchport access vlan 2047
+ switchport mode access
+ switchport voice vlan 2046
+ mab
+ access-session port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ service-policy type control subscriber PMAP_DefaultWiredDot1xOpenAuth_1X_MAB
 !
 !
 interface Loopback0
@@ -507,7 +928,7 @@ interface GigabitEthernet1/1/4
  service-policy output DNA-dscp#APIC_QOS_Q_OUT
 !
 interface TenGigabitEthernet1/1/1
- description P2P link cs3850
+ description changed by DNAC
  no switchport
  ip address 10.10.22.70 255.255.255.252
  service-policy output DNA-dscp#APIC_QOS_Q_OUT
@@ -560,8 +981,56 @@ interface FortyGigabitEthernet1/1/2
 interface Vlan1
  ip address 10.10.22.113 255.255.255.240
 !
+router lisp
+ locator-table default
+ locator-set rloc_3e48558a-237a-4bca-8823-0580b88c6acf
+  IPv4-interface Loopback0 priority 10 weight 10
+  auto-discover-rlocs
+  exit-locator-set
+ !
+ service ipv4
+  encapsulation vxlan
+  map-cache-limit 25000
+  database-mapping limit dynamic 5000
+  itr map-resolver 10.2.2.3
+  etr map-server 10.2.2.3 key 7 xxxxxxxx
+  etr map-server 10.2.2.3 proxy-reply
+  etr
+  sgt
+  no map-cache away-eids send-map-request
+  proxy-etr
+  proxy-itr 10.2.2.4
+  exit-service-ipv4
+ !
+ service ethernet
+  database-mapping limit dynamic 5000
+  itr map-resolver 10.2.2.3
+  itr
+  etr map-server 10.2.2.3 key 7 xxxxxxxx
+  etr map-server 10.2.2.3 proxy-reply
+  etr
+  exit-service-ethernet
+ !
+ ipv4 locator reachability exclude-default
+ ipv4 source-locator Loopback0
+ exit-router-lisp
+!
 router ospf 4
  network 10.10.22.0 0.0.0.255 area 1
+!
+router bgp 6500
+ bgp router-id interface Loopback0
+ bgp log-neighbor-changes
+ bgp graceful-restart
+ neighbor 10.2.2.3 remote-as 6500
+ neighbor 10.2.2.3 update-source Loopback0
+ !
+ address-family vpnv4
+  neighbor 10.2.2.3 activate
+  neighbor 10.2.2.3 send-community both
+  neighbor 10.2.2.3 route-map deny_0.0.0.0 in
+  neighbor 10.2.2.3 route-map tag_local_eids out
+ exit-address-family
 !
 ip forward-protocol nd
 ip http server
@@ -569,9 +1038,12 @@ ip http authentication local
 ip http secure-server
 ip http client source-interface TenGigabitEthernet1/1/1
 !
+ip community-list 1 permit 655370
 ip ssh source-interface TenGigabitEthernet1/1/1
 ip ssh version 2
 !
+!
+ip prefix-list deny_0.0.0.0 seq 10 permit 0.0.0.0/0
 ip radius source-interface Loopback0 
 !
 ip access-list extended DNA-APIC_QOS_IN#BROADCAST__acl
@@ -1296,8 +1768,42 @@ ip access-list extended DNA-APIC_QOS_IN#TUNNELED__acl
  remark capwap-data
  permit udp any any eq 5246
  permit udp any any eq 5247
+ip access-list extended IPV4_CRITICAL_AUTH_ACL
+ permit ip any any
+ip access-list extended IPV4_PRE_AUTH_ACL
+ permit udp any any eq bootpc
+ permit udp any any eq domain
+ deny   ip any any
+ip sla 1
+ icmp-echo 10.2.2.3 source-ip 10.2.2.4
+ threshold 3
+ip sla schedule 1 life forever start-time now
 logging host 10.10.20.101
 logging host 10.10.20.103
+!
+route-map tag_local_eids permit 5 
+ set community 655370
+!
+route-map deny_0.0.0.0 deny 25 
+ match ip address prefix-list deny_0.0.0.0
+!
+route-map deny_0.0.0.0 permit 30 
+!
+route-map deny-all-eids deny 15 
+ match community 1
+!
+route-map deny-all-eids deny 25 
+ match ip address prefix-list deny_0.0.0.0
+!
+route-map deny-all-eids permit 30 
+!
+route-map permit-all-eids permit 15 
+ match community 1
+!
+route-map permit-all-eids deny 25 
+ match ip address prefix-list deny_0.0.0.0
+!
+route-map permit-all-eids deny 30 
 !
 snmp-server community xxxxxxxx RW
 snmp-server community xxxxxxxx RO
@@ -1400,6 +1906,14 @@ radius-server attribute 25 access-request include
 radius-server dead-criteria time 5 tries 3
 radius-server deadtime 30
 !
+!
+ipv6 access-list IPV6_CRITICAL_AUTH_ACL
+ permit ipv6 any any
+!
+ipv6 access-list IPV6_PRE_AUTH_ACL
+ permit udp any any eq bootpc
+ permit udp any any eq domain
+ deny ipv6 any any
 !
 control-plane
  service-policy input system-cpp-policy
